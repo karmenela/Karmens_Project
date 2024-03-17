@@ -1,0 +1,44 @@
+ 
+
+dersnum=int(input("Kaç dersin var?"))
+herdersortalama=[]
+toplamderssaati=[]
+for ders in range(dersnum):
+    dersinisec=input("Dersini seç: ")
+
+    print(dersinisec.upper())
+    agırlık= int(input("Dersinin ağırlığı nedir?(kaç saat alıyorsun)"))
+    toplamderssaati.append(agırlık)
+
+    yaz1= int(input("1. yazılı notun:"))
+    yaz2= int(input("2. yazılı notun:"))
+    perf= int(input("Performans notun:"))
+    a = (yaz1,yaz2,perf)
+    perf2= max(a)
+    print("2. performans notun:",perf2)
+
+
+    def Average(liste):
+        return sum(liste)/len(liste)
+    liste= [yaz1,yaz2,perf,perf2]
+    average = Average(liste)
+
+    print("Bu dersin ortalaması: ", average)
+    herdersortalama.append(average*agırlık)
+    print("\n\n")
+
+
+
+
+toplam_ortalama=sum(herdersortalama)/ sum(toplamderssaati)
+print("Tüm derslerin ortalaması:",toplam_ortalama)
+
+
+
+
+
+
+
+
+
+
