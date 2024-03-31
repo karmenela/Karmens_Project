@@ -1,0 +1,57 @@
+import random
+
+c="TAŞ KAĞIT MAKAS OYUNU"
+print(c.center(50))
+a=input("")
+b=input("ÖNEMLİ NOT: Oyunda hile yoktur.Bilgisayar her seferinde random karşılık verir!\n")
+
+
+op=["T","K","M"]
+
+soy=0
+spc=0
+
+while True:
+    if soy == 3:
+        print("Oyun bitti! Sen kazandın!")
+        break
+
+    elif spc == 3:
+        print("Oyun bitti! Kaybettin!")
+        break
+
+    oy=input("Taş(T), Kağıt(K) veya Makas(M) seçiniz:")
+    pc = random.choice(op)
+
+    if oy=="T" and pc=="M":
+        print(f"Sen:{oy} Bilgisayar:{pc} Sen kazandın!")
+        soy=soy+1
+        print(f"Sen-Bilgisayar:{soy}-{spc}\n")
+
+    elif oy=="T" and pc=="K":
+        print(f"Sen:{oy} Bilgisayar:{pc} Kaybettin ezik!")
+        spc = spc + 1
+        print(f"Sen-Bilgisayar:{soy}-{spc}\n")
+
+    elif oy=="K" and pc=="M":
+        print(f"Sen:{oy} Bilgisayar:{pc} Kaybettin ezik!")
+        spc = spc + 1
+        print(f"Sen-Bilgisayar:{soy}-{spc}\n")
+    elif oy=="K" and pc=="T":
+        print(f"Sen:{oy} Bilgisayar:{pc} Sen kazandın!")
+        soy = soy + 1
+        print(f"Sen-Bilgisayar:{soy}-{spc}\n")
+
+    elif oy=="M" and pc=="K":
+        print(f"Sen:{oy} Bilgisayar:{pc} Sen kazandın!")
+        soy = soy + 1
+        print(f"Sen-Bilgisayar:{soy}-{spc}\n")
+
+    elif oy=="M" and pc=="T":
+        print(f"Sen:{oy} Bilgisayar:{pc} Kaybettin ezik!")
+        spc = spc + 1
+        print(f"Sen-Bilgisayar:{soy}-{spc}\n")
+
+    else:
+        print(f"Sen:{oy} Bilgisayar:{pc} Berabere!")
+        print(f"Sen-Bilgisayar:{soy}-{spc}\n")
