@@ -1,0 +1,29 @@
+a= input("ADAM ASMACA OYUNU")
+b=input("Lütfen her seferinde bir harf tahmin ediniz.Toplam 7 harf tahmin hakkınız var.")
+c=input("Kelimeyi tahmin etmek istediğinizde 'tahmin' yazın")
+name= ("kelimeyi kendin seç")
+
+length=len(name)
+print(f"kelime {length} harflidir.")
+word= "_ "* length
+print(word)
+
+while True:
+    harf=input("Bir harf tahmin ediniz: ")
+    harf=harf.lower()
+    if harf in name:
+        place= name.index(harf)+1
+        placecom= name.index
+        print(f"{harf} harfi {place}. sırada")
+
+    elif harf=="tahmin":
+        guess=input("Tahmin ediniz: ")
+        if guess==name:
+            print("Tebrikler!!!! Doğru bildiniz!")
+            break
+        else:
+            print("Maalesef yanlış bildiniz:(")
+            break
+
+    else:
+        print("Bu harf maalesef yok.")
