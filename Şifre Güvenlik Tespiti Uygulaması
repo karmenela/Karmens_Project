@@ -1,0 +1,41 @@
+
+print("ŞİFRE GÜVENLİK TESPİTİ'ne hoşgeldiniz.")
+a= input("(Devam etmek için Enter'a basın)")
+
+print("Şifreniz en az 8 karakter, en az 1 büyük harf, en az 1 küçük harf, en az 1 sembol(. veya -) ve en az bir rakamdam oluşmalıdır. ")
+sifre=input("Lütfen bir şifre belirleyiniz:")
+
+#en az 8 karakter
+#en az 1 bh
+#en az 1 kh
+#en az 1 rakam
+#en az 1 sembol
+
+buyuk="ABCDEFGHIJKLMNOPRSŞTUXWQ"
+kucuk="qwertyuıopasdfghjklizxcvbnm"
+rakam="0123456789"
+sembol=".-"
+
+if len(sifre)>=8:
+    bs,ks,ss,rs=0,0,0,0
+    for karakter in sifre:
+        if karakter in buyuk:
+            bs=bs+1
+        elif karakter in kucuk:
+            ks=ks+1
+        elif karakter in rakam:
+            rs=rs+1
+        elif karakter in sembol:
+            ss=ss+1
+
+    if bs>=1 and ks>=1 and rs>=1 and ss>=1:
+        print("Şifreniz geçerli")
+    else:
+        print("Geçersiz şifre")
+
+
+
+else:
+    print("Şifre en az 8 harf olmalı")
+
+
