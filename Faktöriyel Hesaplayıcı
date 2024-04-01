@@ -1,0 +1,8 @@
+sayi=int(input("Faktöriyelini bulmak için bir sayı gir: "))
+def fakt(sayi):
+    toplam=1
+    for i in range(1,sayi+1):
+        toplam=toplam*i
+    return toplam
+
+print(f"Faktöriyel{sayi} ({sayi}!):",fakt(sayi))
