@@ -1,0 +1,13 @@
+say=int(input("Harshad sayı olup olmadığına bakmak için bir sayı giriniz:"))
+
+def rakamtopla(sayi):
+    toplam=0
+    for eleman in str(sayi):
+       toplam=toplam+int(eleman)
+    return sayi%toplam==0
+
+durum=rakamtopla(say)
+if durum:
+    print(f"{say} harshad sayısıdır.")
+else:
+    print(f"{say} harshad sayısı değildir.")
