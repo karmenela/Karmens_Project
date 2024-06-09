@@ -1,0 +1,53 @@
+import random
+
+oyuncu1=0
+oyuncu2=0
+sayac=0
+
+kurallar={3:22, 11:26, 5:8, 20:29, 27:1, 21:9, 17:4, 19:7}
+input("SNAKE AND LADDERS OYUNU")
+input("2 kişilik bir oyundur. Amacınız 0 noktasından 30'a ulaşmaktır.\n"
+      "Merdivenler sizi yukarı taşırken yılanlar sizi geriye atar.\n"
+      "İyi olan kazansın!\n")
+
+print("İsimlerinizi giriniz:")
+oy1=input("Oyuncu 1:")
+oy2=input("Oyuncu 2:")
+
+while True:
+    sayac+=1
+
+    #oyunu bitirmek için
+    if oyuncu1>=30 or oyuncu2>=30:
+        if oyuncu1>=30:
+            print("Oyun bitti!",oy1,"kazandı!")
+            break
+        elif oyuncu2>=30:
+            print("Oyun bitti!",oy2,"kazandı!")
+            break
+
+    #sıra belirleme
+    if sayac%2==1:
+        #Oyuncu1 sırası
+        siradaki=oy1
+    else:
+        #Oyuncu2 sırası
+        siradaki=oy2
+
+    #Zar atma
+    zarsalla=input(f"{siradaki} lütfen zar at: ")
+    zar=random.randint(1,6)
+    print("Zar:",zar)
+    if siradaki==oy1:
+        oyuncu1=oyuncu1+zar
+        print("Geldiğin nokta:",oyuncu1,"\n")
+        if oyuncu1 in kurallar.keys():
+            oyuncu1=kurallar[oyuncu1]
+            print("AAAA! Yeni noktaya taşındın:",oyuncu1,"\n")
+    else:
+        oyuncu2 = oyuncu2 + zar
+        print("Geldiğin nokta:", oyuncu2,"\n")
+        if oyuncu2 in kurallar.keys():
+            oyuncu2=kurallar[oyuncu2]
+            print("AAAA! Yeni noktaya taşındın:",oyuncu2,"\n")
+
