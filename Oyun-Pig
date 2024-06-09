@@ -1,0 +1,36 @@
+import random
+
+def dice():
+    return random.randint(1, 6)
+
+while True:
+    players= input("Enter the number of players(2-4):"  )
+    if players.isdigit:
+        players=int(players)
+        if 2 <= players <= 4:
+            break
+        else:
+            print("Number of players must be between 2 and 4")
+    else:
+        print("Invalid, try again")
+
+max_score= 50 
+player_scores=[0 for _ in range(players)]
+
+while max(player_scores)< max_score:
+    for player in range(players):
+        print(f"\n Player {player+1}'s turn \n")
+        input(f"Press enter to roll the dice...")
+        number=dice()
+        input(f"You rolled a {number}")
+        if number==1:
+            print("You are back to 0")
+            player_scores[player]=0
+        else:
+            player_scores[player] += number
+        input(f"You're score is {player_scores[player]}")
+        print("Players' scores:", player_scores)
+
+
+
+
