@@ -3,43 +3,49 @@ sg.theme("Material1")
   
 
 layout=[
+[sg.Text("Ortalama Hesaplayıcı", font=("Impact", 24), justification="center",text_color="red")],
+[sg.T("")],
 [sg.Text("İnglizce",font=("Calibri",18)),sg.Combo([1,2,3,4,5,6,7,8],default_value=8,size=(5,20),font=("Calibri",15),key="-ING_NO-"),sg.Input(key="-ING-",size=(5,20),font=("Calibri",15))],
 [sg.Text("Edebiyat",font=("Calibri",18)),sg.Combo([1,2,3,4,5,6,7,8],default_value=5,size=(5,20),font=("Calibri",15),key="-EDE_NO-"),sg.Input(key="-EDE-",size=(5,20),font=("Calibri",15))],
+[sg.T("")],
 [sg.HSep()],
-
+[sg.T("")],
 [sg.Text("Biyoloji",font=("Calibri",18)),sg.Combo([1,2,3,4,5,6,7,8],default_value=2,size=(5,20),font=("Calibri",15),key="-BIO_NO-"),sg.Input(key="-BIO-",size=(5,20),font=("Calibri",15))],
 [sg.Text("Fizik",font=("Calibri",18)),sg.Combo([1,2,3,4,5,6,7,8],default_value=2,size=(5,20),font=("Calibri",15),key="-FIZ_NO-"),sg.Input(key="-FIZ-",size=(5,20),font=("Calibri",15))],
 [sg.Text("Kimya",font=("Calibri",18)),sg.Combo([1,2,3,4,5,6,7,8],default_value=2,size=(5,20),font=("Calibri",15),key="-KIM_NO-"),sg.Input(key="-KIM-",size=(5,20),font=("Calibri",15))],
+[sg.T("")],
 [sg.HSep()],
-
+[sg.T("")],
 [sg.Text("Matematik",font=("Calibri",18)),sg.Combo([1,2,3,4,5,6,7,8],default_value=6,size=(5,20),font=("Calibri",15),key="-MAT_NO-"),sg.Input(key="-MAT-",size=(5,20),font=("Calibri",15))],
 [sg.Text("Coğrafya",font=("Calibri",18)),sg.Combo([1,2,3,4,5,6,7,8],default_value=2,size=(5,20),font=("Calibri",15),key="-COG_NO-"),sg.Input(key="-COG-",size=(5,20),font=("Calibri",15))],
 
 [sg.Text("Seçmeli İkinci yabancı dil",font=("Calibri",18)),sg.Combo([1,2,3,4,5,6,7,8],default_value=2,size=(5,20),font=("Calibri",15),key="-MFL_NO-"),sg.Input(key="-MFL-",size=(5,20),font=("Calibri",15))],
 [sg.Text("Tarih",font=("Calibri",18)),sg.Combo([1,2,3,4,5,6,7,8],default_value=2,size=(5,20),font=("Calibri",15),key="-TAR_NO-"),sg.Input(key="-TAR-",size=(5,20),font=("Calibri",15))],
 [sg.Text("Din",font=("Calibri",18)),sg.Combo([1,2,3,4,5,6,7,8],default_value=2,size=(5,20),font=("Calibri",15),key="-DIN_NO-"),sg.Input(key="-DIN-",size=(5,20),font=("Calibri",15))],
-
+[sg.T("")],
 [sg.HSep()],
-
+[sg.T("")],
 [sg.Text("Beden",font=("Calibri",18)),sg.Combo([1,2,3,4,5,6,7,8],default_value=2,size=(5,20),font=("Calibri",15),key="-BED_NO-"),sg.Input(key="-BED-",size=(5,20),font=("Calibri",15))],
 [sg.Text("Resim/Müzik",font=("Calibri",18)),sg.Combo([1,2,3,4,5,6,7,8],default_value=2,size=(5,20),font=("Calibri",15),key="-RES_NO-"),sg.Input(key="-RES-",size=(5,20),font=("Calibri",15))],
+[sg.T("")],
 [sg.HSep()],
+[sg.T("")],
 
 [sg.Text("Seçmeli ders 1",font=("Calibri",18)),sg.Combo([1,2,3,4,5,6,7,8],default_value=1,size=(5,20),font=("Calibri",15),key="-S1_NO-"),sg.Input(key="-S1-",size=(5,20),font=("Calibri",15))],
 [sg.Text("Seçmeli ders 2",font=("Calibri",18)),sg.Combo([1,2,3,4,5,6,7,8],default_value=1,size=(5,20),font=("Calibri",15),key="-S2_NO-"),sg.Input(key="-S2-",size=(5,20),font=("Calibri",15))],
 [sg.Text("Sağlık Bilgisi ve Trafik",font=("Calibri",18)),sg.Combo([1,2,3,4,5,6,7,8],default_value=1,size=(5,20),font=("Calibri",15),key="-SAG_NO-"),sg.Input(key="-SAG-",size=(5,20),font=("Calibri",15))],
+[sg.T("")],
 
 
 
 
-
-[sg.B("HESAPLA",font=("Impact",20))],
-[sg.T("",font=("Calibri",30),key="-ORTALAMA-")]
+[sg.Push(),sg.B("HESAPLA",font=("Impact",20)),sg.Push()],
+[sg.T("",font=("Calibri",30),key="-ORTALAMA-",text_color="red")]
 
 ]
 
 
-window=sg.Window("ORTALAMA HESAPLAYICI",layout)
+window=sg.Window("ORTALAMA HESAPLAYICI",layout, font=("Helvetica",18))
 
 while True:
     event,values=window.read()
@@ -53,7 +59,7 @@ while True:
         ortalama = sum(tum_dersler) / toplam_ders_sayısı
         window["-ORTALAMA-"].update(f"Ortalamanız: {ortalama}")
         
-      
+        
 
 window.close()  
 
